@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Not Found | UMSI Career Development Resource Hub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header>
+    <a href="index.html" class="logo-link" aria-label="UMSI Home">
+      <img src="images/UMSI_signature_vertical_informal_solidblue.jpg" alt="UMSI Logo">
+    </a>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="resumes_and_cover_letters.html">Resumes & Cover Letters</a></li>
+        <li><a href="networking_and_connections.html">Networking & Connections</a></li>
+        <li><a href="portfolios.html">Portfolios</a></li>
+      </ul>
+    </nav>
+    <h1>Page Not Found</h1>
+  </header>
+
+  <main id="main" tabindex="-1">
+
+    <section class="card" style="text-align:center; padding:48px 24px;">
+      <h2>Sorry, this page doesn't exist.</h2>
+      <p>It looks like you tried to access a page that isn’t available.
+        The resource may have been moved, renamed, or never existed.</p>
+
+      <p>You can return to the <a href="index.html">Home Page</a> or explore one of the main sections:</p>
+
+      <ul style="list-style:none; padding:0; margin:24px 0; display:flex; flex-wrap:wrap; justify-content:center; gap:12px;">
+        <li><a href="resumes_and_cover_letters.html" class="page-toc-link">Resumes & Cover Letters</a></li>
+        <li><a href="networking_and_connections.html" class="page-toc-link">Networking & Connections</a></li>
+        <li><a href="portfolios.html" class="page-toc-link">Portfolios</a></li>
+      </ul>
+
+      <figure style="margin-top:24px;">
+        <img src="images/UMSI_CampusFall_UMSIBackpack_02.jpg" alt="UMSI student walking through campus in the fall.">
+        <figcaption style="color:#555; margin-top:8px;">Keep exploring — there’s always more to learn at UMSI.</figcaption>
+      </figure>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>
+      Copyright © <span id="copyright-year"></span> University of Michigan School of Information |
+      <a href="https://umich.instructure.com/courses/137916">UMSI Career Development Office</a>
+    </p>
+  </footer>
+
+  <script>
+    const year = new Date().getFullYear();
+    document.getElementById("copyright-year").textContent = year;
+  </script>
+
+</body>
+</html>

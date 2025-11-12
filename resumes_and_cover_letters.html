@@ -4,31 +4,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
   <title>Resumes & Cover Letters</title>
 </head>
 
 <body>
-    <header>
-        <a href="">Skip to Main Content</a>
-        <img src="images/UMSI_signature_vertical_informal_solidblue.jpg" alt="UMSI Logo">
-        <nav aria-label ="Primary">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="resumes_and_cover_letters.html">Resumes & Cover Letters</a></li>
-                <li><a href="networking_and_connections.html">Networking & Connections</a></li>
-                <li><a href="portfolios.html">Portfolios</a></li>
-            </ul>
-        </nav>
-    <h1>Resumes & Cover Letters</h1>
-    <nav aria-label="On this page">
-      <strong>Quick jump:</strong>
-      <a href="#resume-tips">Resume Tips</a>
-      <a href="#cover-letter-tips">Cover Letter Tips</a>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header>
+    <a href="index.html" class="logo-link">
+      <img src="images/UMSI_signature_vertical_informal_solidblue.jpg" alt="UMSI Logo">
+    </a>
+
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="resumes_and_cover_letters.html">Resumes & Cover Letters</a></li>
+        <li><a href="networking_and_connections.html">Networking & Connections</a></li>
+        <li><a href="portfolios.html">Portfolios</a></li>
+      </ul>
     </nav>
-    <!--This secondary navigation utilizing tabindex was taken and modief from UMGPT with the prompt "How to make a secondary navigation inside my page so that I can have two topics" Followed up by "what is the attribute tabindex and what is its use?"-->
+    <h1>Resumes & Cover Letters</h1>
   </header>
-  <main>
-    <section>
+
+  <main id="main" tabindex="-1">
+    <nav class="page-toc card" aria-label="On this page">
+      <h2 class="page-toc__title">Quick navigation</h2>
+      <ul class="page-toc__list">
+        <li><a href="#resume-tips">Resume Tips</a></li>
+        <li><a href="#cover-letter-tips">Cover Letter Tips</a></li>
+      </ul>
+    </nav>
+
+    <section class="card">
       <h2>Craft a Resume that Tells Your Story</h2>
       <p>
         Your resume is often your first impression—an opportunity to highlight your unique strengths, skills, and
@@ -42,7 +51,7 @@
       </p>
     </section>
 
-    <section id="resume-tips" tabindex="-1">
+    <section id="resume-tips" tabindex="-1" class="card">
       <h2>Resume Writing Made Easy: Steps to Success</h2>
       <ol>
         <li><strong>Download a UMSI-Approved Template:</strong> Start with a format that works—no need to design from
@@ -56,10 +65,12 @@
         <li><strong>Review and Edit:</strong> Proofread for errors, check formatting, and ask for feedback from peers or
           a career coach.</li>
       </ol>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/Fmp0vMajg1o" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/Fmp0vMajg1o" title="Resume Tips"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen></iframe>
     </section>
 
-    <section>
+    <section class="card">
       <hr>
       <h2>Resume Resources</h2>
       <ul>
@@ -67,27 +78,27 @@
           <a href="https://docs.google.com/document/d/1_1GfDJyVGIgE82MZjVhuWT_aB_2Hcj1NN62FUCXoR_o/edit?tab=t.0"
             target="_blank">
             UMSI Resume Guide and Rubric
-          </a> <br>
+          </a><br>
           Comprehensive UMSI guide including tips, formatting rules, and sample accomplishments.
         </li>
         <li>
           <a href="https://docs.google.com/document/d/1-EVZYH_Fic4mfLVGOXyHTSeRwBWmmi2WHSgGDLGGPEs/edit?tab=t.0"
             target="_blank">
             Writing Effective Resume Bullets
-          </a> <br>
+          </a><br>
           Learn how to describe your work and impact in ways employers notice.
         </li>
         <li>
           <a href="https://umsi.instructure.com/courses/12345/pages/resume-rubric" target="_blank">
             Resume Rubric
-          </a> <br>
-          Evaluate your resume using the same criteria as UMSI’s Career Development Office.
+          </a><br>
+          Evaluate your resume using the same criteria as the Career Development Office.
         </li>
         <li>
           <a href="https://docs.google.com/document/d/1vJMfgw9nwpHN9Sy0L0RP0aNBbaDSsiLPc2vy-doac6s/edit?tab=t.0"
             target="_blank">
             Application Materials: Workshops and More
-          </a> <br>
+          </a><br>
           Attend a Resume Refresh workshop, review video tutorials, or access additional templates.
         </li>
       </ul>
@@ -97,113 +108,91 @@
       </p>
     </section>
 
-    <section>
+    <section class="card">
       <hr>
       <h2>Resume FAQ</h2>
       <ul>
-        <li>
-          <strong>How long should my resume be?</strong><br>
-          For most UMSI students and new grads, one page is best. More experienced professionals may require two pages.
+        <li><strong>How long should my resume be?</strong><br>One page for most students/new grads; two pages for more
+          experienced professionals.</li>
+        <li><strong>Do I need a different resume for each application?</strong><br>Yes—tailor to the role and keywords.
         </li>
-        <li>
-          <strong>Do I need a different resume for each application?</strong><br>
-          It’s wise to tailor your resume to the requirements and keywords of each opportunity.
-        </li>
-        <li>
-          <strong>Is it okay to include coursework or student projects?</strong><br>
-          Absolutely! UMSI coursework and projects are valued by employers, especially if they show relevant skills and
-          impact.
-        </li>
-        <li>
-          <strong>How often should I update my resume?</strong><br>
-          Update your resume every semester, after major projects, or whenever you gain a new role or responsibility.
-        </li>
+        <li><strong>Is it okay to include coursework or student projects?</strong><br>Absolutely, especially when
+          relevant and impactful.</li>
+        <li><strong>How often should I update my resume?</strong><br>Each semester and after major projects or new
+          roles.</li>
       </ul>
     </section>
-    <!-- Content taken & modified from UMGPT with the prompt, "for the same content write me some intro content and resources for a resume page" - this was after I had asked for content for the home page.  UMGPT. (2025). UMGPT (GPT-4.1 August 25th version) [Large language model]. -->
 
-    <section id="cover-letter-tips" tabindex="-1">
-      <hr>
-      <h2>Write a Cover Letter that Reaches Employers</h2>
-      <p>A well-crafted cover letter complements your resume by providing context, giving you a chance to showcase your
-        enthusiasm and connect with possible employers. Whether you're new to cover letters or looking to refine your
-        approach, these resources will guide you through the process.</p>
-      <p>UMSI students are known for their strong communication skills, and a tailored cover letter can help you stand
-        out in a competitive job market. On this page, you'll find practical tips, templates, and examples—all designed
-        to help you create compelling cover letters that resonate with hiring managers.</p>
+    <section id="cover-letter-tips" tabindex="-1" class="two-col card">
+      <div>
+        <hr>
+        <h2>Write a Cover Letter that Reaches Employers</h2>
+        <p>A well-crafted cover letter complements your resume by providing context and showing motivation. Whether
+          you're new to cover letters or refining your approach, these tips will help.</p>
+        <p>UMSI students are known for strong communication—use a tailored letter to stand out in a competitive market.
+        </p>
+      </div>
+      <div>
+        <h2>Cover Letter Writing Made Simple: Steps to Success</h2>
+        <ol>
+          <li><strong>Understand the Purpose:</strong> Explain why the role and company fit you.</li>
+          <li><strong>Research the Company:</strong> Align to values, culture, and recent work.</li>
+          <li><strong>Structure Clearly:</strong> Intro → evidence/examples → closing with next steps.</li>
+          <li><strong>Use Specific Examples:</strong> Show skills with outcomes and context.</li>
+          <li><strong>Edit and Proofread:</strong> Keep it concise and error-free; get feedback.</li>
+        </ol>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/i7mk1sKikVU" title="Cover Letter Tips"
+          allowfullscreen></iframe>
+      </div>
     </section>
 
-    <section>
-      <h2>Cover Letter Writing Made Simple: Steps to Success</h2>
-      <ol>
-        <li><strong>Understand the Purpose:</strong> A cover letter explains why you're interested in the role and how
-          your skills align with the job requirements.</li>
-        <li><strong>Research the Company:</strong> Tailor your letter by understanding the company's values, culture,
-          and recent developments.</li>
-        <li><strong>Structure Your Letter:</strong> Use a clear format with an introduction, body paragraphs
-          highlighting your qualifications, and a strong closing statement.</li>
-        <li><strong>Use Specific Examples:</strong> Illustrate your skills and experiences with concrete examples that
-          demonstrate your fit for the role.</li>
-        <li><strong>Edit and Proofread:</strong> Ensure your letter is free of errors, concise, and professional. Ask
-          for feedback from peers or a career coach.</li>
-      </ol>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/i7mk1sKikVU" title="YouTube video player"
-        allowfullscreen> </iframe>
-    </section>
-
-    <section>
+    <section class="card">
       <h2>Cover Letter Resources</h2>
       <ul>
         <li>
           <a href="https://docs.google.com/document/d/15kYeycV4isGpNFI6DWnjqTkp5JnMyitKJ1Wc8kIH-eA/edit?usp=sharing"
             target="_blank">
-            UMSI Cover Letter Guide and Rubric</a><br>
-          Step-by-step instructions and examples to help you craft a compelling cover letter.
+            UMSI Cover Letter Guide and Rubric
+          </a><br>
+          Step-by-step instructions and examples to craft a compelling letter.
         </li>
         <li>
           <a href="https://docs.google.com/document/d/1WJrgSiwXGxGLN_mXBrRUdQy3Lijo68DFwYriGGALGjc/edit?usp=sharing"
             target="_blank">
-            Cover Letter Rubric</a><br>
-          Evaluate your cover letter using the same criteria as UMSI’s Career Development Office.
+            Cover Letter Rubric
+          </a><br>
+          Evaluate your letter using the Career Development Office criteria.
         </li>
       </ul>
     </section>
 
-    <section>
+    <section class="card">
       <h2>Cover Letter FAQ</h2>
       <ul>
-        <li>
-          <strong>Do I always need to submit a cover letter?</strong><br>
-          While not always required, a tailored cover letter can enhance your application and demonstrate your interest
-          in the role.
-        </li>
-        <li>
-          <strong>How long should my cover letter be?</strong><br>
-          Aim for one page, typically 3-4 paragraphs. Be concise and focus on the most relevant information.
-        </li>
-        <li>
-          <strong>Should I use the same cover letter for different applications?</strong><br>
-          Customize your cover letter for each job to address specific requirements and show your genuine interest in
-          the company.
-        </li>
-        <li>
-          <strong>What if I don't know the hiring manager's name?</strong><br>
-          Use a general greeting like "Dear Hiring Manager" or "Dear [Department] Team" if you can't find a specific
-          name.
-        </li>
+        <li><strong>Do I always need a cover letter?</strong><br>Not always, but a targeted letter can elevate your
+          application.</li>
+        <li><strong>How long?</strong><br>One page (3–4 short paragraphs).</li>
+        <li><strong>Same letter for different jobs?</strong><br>Customize for each role and company.</li>
+        <li><strong>Don’t know the name?</strong><br>Use “Dear Hiring Manager” or “Dear [Dept] Team.”</li>
       </ul>
-
-      <p>Need feedback on your Resume or Cover Letter? You can always <a
-          href="https://umich.instructure.com/courses/137916/pages/talk-to-a-career-coach" target="_blank">meet with a
-          CDO Career Coach</a> to review your materials.
-      </p>
+      <p>Need feedback? <a href="https://umich.instructure.com/courses/137916/pages/talk-to-a-career-coach"
+          target="_blank">Meet with a CDO Career Coach</a>.</p>
     </section>
+
   </main>
 
   <footer>
-    <p>University of Michigan School of Information | <a href="https://umich.instructure.com/courses/137916">UMSI Career
-        Development Office </a></p>
+    <p>
+      Copyright © <span id="copyright-year"></span>
+      University of Michigan School of Information |
+      <a href="https://umich.instructure.com/courses/137916">UMSI Career Development Office</a>
+    </p>
   </footer>
+
+  <script>
+    const currentYear = new Date().getFullYear();
+    document.getElementById("copyright-year").textContent = currentYear;
+  </script>
 </body>
 
 </html>

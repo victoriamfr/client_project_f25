@@ -1,0 +1,307 @@
+/* ======================================================
+   tokens — colors, borders, shadows (UM palette + neutrals)
+   ====================================================== */
+:root{
+  --um-blue:#00274C;
+  --um-maize:#FFCB05;
+  --ink:#0f172a;       /* primary text */
+  --ink-soft:#334155;  /* secondary text */
+  --line:#e5e7eb;      /* hairline borders */
+  --bg:#ffffff;
+  --bg-soft:#f8fafc;
+  --chip:#f3f4f6;      /* nav pill bg */
+  --shadow:0 1px 2px rgba(0,0,0,.06), 0 6px 16px rgba(0,0,0,.06);
+}
+
+/* ======================================================
+   base reset — simple, mobile-first
+   ====================================================== */
+*{ box-sizing:border-box }
+html, body{ margin:0; padding:0 }
+
+body{
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial,sans-serif;
+  color:var(--ink);
+  background:var(--bg);
+  line-height:1.55;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+img, iframe, video{
+  max-width:100%;
+  height:auto;
+  border:0;
+}
+
+h1,h2,h3{ color:#111 } /* headings default dark on light pages */
+p{ margin:0 0 12px; color:var(--ink) }
+small,.muted{ color:var(--ink-soft) }
+
+a:focus-visible{
+  outline:2px solid var(--um-maize);
+  outline-offset:2px;
+  border-radius:6px;
+}
+
+/* ======================================================
+   header — UM blue bar with pill nav
+   reason: make the brand obvious, navigation scannable
+   ====================================================== */
+header{
+  padding:16px;
+  background:var(--um-blue);
+  color:#fff;
+  border-bottom:4px solid var(--um-maize);
+}
+
+/* clickable logo: use a block link so it doesn’t shift baselines */
+header a.logo-link{
+  display:block;
+  line-height:0; /* avoids stray inline whitespace */
+}
+header a.logo-link img{
+  display:block;
+  max-width:180px;
+  margin:8px 0;
+}
+
+/* primary nav as soft pills (kept compact on mobile) */
+nav[aria-label="Primary"] ul{
+  list-style:none;
+  padding:0;
+  margin:12px 0 0;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+nav[aria-label="Primary"] a{
+  text-decoration:none;
+  padding:8px 12px;
+  border-radius:999px;
+  background:rgba(255,255,255,.15);
+  color:#fff;
+  border:1px solid transparent;
+  transition:background .2s ease, transform .08s ease;
+}
+nav[aria-label="Primary"] a:hover{ background:rgba(255,255,255,.25) }
+nav[aria-label="Primary"] a:focus{
+  outline:2px solid var(--um-maize);
+  outline-offset:3px;
+  background:rgba(255,255,255,.25);
+}
+
+/* page title inside header stays white on the blue bar */
+header h1{ color:#fff; margin-top:10px }
+
+/* ======================================================
+   skip link — pattern i double-checked with chatgpt for a11y
+   ====================================================== */
+.skip-link{
+  position:absolute; left:0; top:0; transform:translateY(-200%);
+  padding:8px 12px; border-radius:10px;
+  background:var(--um-maize); color:var(--um-blue);
+  text-decoration:none; font-weight:600; z-index:1;
+}
+.skip-link:focus,
+.skip-link:focus-visible{
+  position:fixed; top:8px; left:8px; transform:none; z-index:10000;
+  outline:2px solid var(--um-blue); outline-offset:2px;
+  box-shadow:0 0 0 4px rgba(255,203,5,.25);
+}
+
+/* ======================================================
+   on-page TOC (table of contents)
+   rationale: quick jumps for long pages; sticky on desktop
+   (also asked chatgpt for a simple, accessible version)
+   ====================================================== */
+.page-toc{
+  display:block;
+  padding:14px 16px;
+  background:var(--bg);
+  border:1px solid var(--line);
+  border-radius:12px;
+  box-shadow:var(--shadow);
+}
+.page-toc__title{
+  margin:0 0 8px;
+  font-size:18px;
+  color:var(--ink);
+}
+.page-toc__list{
+  list-style:none; padding:0; margin:0;
+  display:flex; gap:10px 14px; flex-wrap:wrap;
+}
+.page-toc__list a{
+  display:inline-block;
+  padding:8px 12px;
+  border-radius:999px;
+  background:var(--chip);
+  color:var(--ink);
+  text-decoration:none;
+  border:1px solid transparent;
+  transition:background .2s ease, border-color .2s ease, transform .08s ease;
+}
+.page-toc__list a:hover{ background:#eef2f7 }
+.page-toc__list a:active{ transform:translateY(1px) }
+.page-toc__list a:focus{
+  outline:2px solid var(--um-maize);
+  outline-offset:2px;
+}
+
+/* ======================================================
+   layout wrappers — cards, lists, media
+   ====================================================== */
+main{ padding:16px; display:grid; gap:20px }
+hr{ border:0; border-top:1px solid var(--line); margin:16px 0 }
+
+.card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:16px;
+  box-shadow:var(--shadow);
+}
+.card h2:first-child,
+.card h3:first-child{ margin-top:4px }
+
+/* lists and inline links */
+ul{ padding-left:20px }
+li{ margin:6px 0 }
+li > a{ color:var(--um-blue); text-decoration:underline }
+li > a:hover{ text-decoration:none }
+a{ color:var(--um-blue) }
+a:hover{ text-decoration:none }
+
+/* figures + embeds get consistent edges */
+figure{ margin:0 }
+figcaption{ font-size:14px; color:var(--ink-soft); margin-top:6px }
+iframe, video{
+  display:block;
+  width:100%;
+  border-radius:12px;
+  background:#000;
+}
+
+/* simple utility layouts (upgrade at breakpoints) */
+.home-hero{ display:grid; gap:12px }
+.two-col{ display:block }
+.media-grid{ display:block }
+
+/* ======================================================
+   footer
+   ====================================================== */
+footer{
+  padding:24px 16px;
+  background:var(--bg-soft);
+  border-top:4px solid var(--um-maize);
+  font-size:15px;
+  color:var(--ink-soft);
+}
+footer a{ color:var(--um-blue); text-decoration:underline }
+footer a:hover{ text-decoration:none }
+
+/* ======================================================
+   tablet (≥600px)
+   reason: center content and let home hero go 2-up if room
+   ====================================================== */
+@media (min-width:600px){
+  header a.logo-link img{ max-width:200px }
+
+  nav[aria-label="Primary"] ul{
+    gap:14px;
+    justify-content:center;
+  }
+
+  main{
+    padding:20px;
+    display:grid;
+    grid-template-columns:1fr min(700px,85%) 1fr;
+    gap:24px;
+  }
+  main > *{ grid-column:2 }
+
+  .card{ padding:20px }
+  .home-hero{ grid-template-columns:1.3fr 1fr; gap:20px }
+}
+
+/* ======================================================
+   desktop (≥900px)
+   reason: real grid header; centered main column; 2-col sections
+   ====================================================== */
+@media (min-width:900px){
+  header{
+    display:grid;
+    grid-template-columns:220px 1fr;
+    grid-template-rows:auto auto;
+    grid-template-areas:
+      "brand nav"
+      "brand title";
+    align-items:center; /* keeps logo/nav/title on the same visual line */
+    column-gap:24px;
+    padding:24px 32px;
+    background:var(--um-blue);
+    color:#fff;
+    border-bottom:4px solid var(--um-maize);
+    box-shadow:0 2px 8px rgba(0,0,0,.15);
+  }
+
+  /* place items in the grid explicitly */
+  header .logo-link{ grid-area:brand; align-self:center }
+  nav[aria-label="Primary"]{ grid-area:nav; justify-self:end; align-self:center }
+  header h1{ grid-area:title; margin:0; color:#fff; align-self:center }
+
+  main{
+    padding:24px 32px;
+    grid-template-columns:1fr min(800px,60%) 1fr;
+  }
+
+  .two-col{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:24px;
+  }
+  .media-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    align-items:start;
+  }
+
+  footer{
+    padding:28px 32px;
+    display:flex;
+    gap:12px;
+    justify-content:space-between;
+    align-items:center;
+    border-top:1px solid var(--line);
+  }
+
+  /* sticky toc so the page is easier to scan while scrolling */
+  .page-toc{
+    position:sticky;
+    top:16px; /* leaves room for the skip link when it appears */
+    z-index:2;
+  }
+}
+
+/* ======================================================
+   large / widescreen (≥1200px)
+   reason: a bit more breathing room on big monitors
+   ====================================================== */
+@media (min-width:1200px){
+  header{ grid-template-columns:260px 1fr; column-gap:40px }
+
+  main{ grid-template-columns:1fr min(950px,55%) 1fr }
+
+  .two-col{ gap:32px }
+  .card{ padding:24px 28px }
+
+  footer{
+    font-size:16px;
+    padding:32px 48px;
+  }
+
+  .page-toc__list a{ padding:8px 10px }
+}

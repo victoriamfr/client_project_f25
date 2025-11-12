@@ -4,15 +4,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
   <title>MSI Career Development Resource Hub</title>
 </head>
 
 <body>
 
+  <a class="skip-link" href="#main">Skip to main content</a>
+
   <header>
-    <a href="">Skip to Main Content</a>
-    <img src="images/UMSI_signature_vertical_informal_solidblue.jpg" alt="UMSI Logo">
-    <nav aria-label ="Primary">
+    <a href="index.html" class="logo-link">
+      <img src="images/UMSI_signature_vertical_informal_solidblue.jpg" alt="UMSI Logo">
+    </a>
+
+    <nav aria-label="Primary">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="resumes_and_cover_letters.html">Resumes & Cover Letters</a></li>
@@ -21,10 +26,10 @@
       </ul>
     </nav>
     <h1>Welcome to the UMSI Career Development Resource Hub</h1>
-
   </header>
-  <main>
-    <section>
+
+  <main id="main" tabindex="-1">
+    <section class="card">
       <h2>Your Central Hub for Career Success at UMSI</h2>
       <p>
         Ready to take the next step toward your future career? The UMSI Career Development Resource Hub is your one-stop
@@ -40,8 +45,6 @@
 
     <section>
       <h2>Why Use This Resource?</h2>
-
-
       <ul>
         <li><strong>Everything in One Place:</strong> Stop searching endlessly—quickly access the resources you need for
           resumes, interviews, networking, mentorship, and more.</li>
@@ -55,22 +58,25 @@
           UMSI’s unique support, showcasing our commitment to your success.</li>
       </ul>
     </section>
+
     <section>
       <hr>
       <h2>Start Here</h2>
-      <div>
+
+      <div class="home-hero card">
         <img src="images/UMSI_CampusFall_UMSIBackpack_02.jpg"
           alt="A student wears a UMSI backpack in fall on the drag.">
+
         <ul>
-          <li><a href="resume.html">Resumes</a></li>
-          <li><a href="network.html">Networking & Connections</a></li>
+          <li><a href="resumes_and_cover_letters.html">Resumes</a></li>
+          <li><a href="networking_and_connections.html">Networking & Connections</a></li>
           <li><a>Career Exploration</a></li>
           <li><a href="https://www.si.umich.edu/student-experience/career-development/career-coaching"
               target="_blank">Talk to a Career Coach</a></li>
         </ul>
-
       </div>
-      <div>
+
+      <div class="card">
         <h3>Most Popular Resources</h3>
         <ul>
           <li><a href="https://docs.google.com/document/d/1_1GfDJyVGIgE82MZjVhuWT_aB_2Hcj1NN62FUCXoR_o/edit?tab=t.0"
@@ -87,7 +93,8 @@
         </ul>
       </div>
     </section>
-    <section>
+
+    <section class="card">
       <hr>
       <h2>Connect with the UMSI Career Development Office</h2>
       <p>
@@ -97,13 +104,18 @@
         schedule a coaching session, or just say hello.
       </p>
     </section>
-    <!-- Content taken & modified from UMGPT with the prompt, "Write me a webpage of intro content to help meet the following requirements - this is for the home page": and then pasted in the client objectives & project requirements"
-        UMGPT. (2025). UMGPT ( GPT-4.1 August 25th version) [Large language model]. -->
   </main>
+
   <footer>
-    <p>University of Michigan School of Information | <a href="https://umich.instructure.com/courses/137916">UMSI Career
-        Development Office </a></p>
+    <p>Copyright © <span id="copyright-year"></span> University of Michigan School of Information |
+      <a href="https://umich.instructure.com/courses/137916">UMSI Career Development Office</a>
+    </p>
   </footer>
+
+  <script>
+    const currentYear = new Date().getFullYear();
+    document.getElementById("copyright-year").textContent = currentYear;
+  </script>
 </body>
 
 </html>
